@@ -16,6 +16,3 @@
 //= require react_ujs
 //= require components
 //= require rails-ujs
-
-// var button = ReactBootstrap.Button;
-// require react_bootstrap

@@ -3,6 +3,10 @@ var Body = createReactClass({
 		return { users: [] }
 	},
 
+	resetState: function(){
+		this.setState({ users: [] });
+	},
+
 	componentDidMount() {
 		$.getJSON('/api/v1/users.json', (response) => { this.setState({ users: response }) });
 	},

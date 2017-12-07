@@ -1,5 +1,11 @@
 class Api::V1::UsersController < Api::V1::BaseController
+
 	def index
+		# render json: {
+		# 	users: User.paginate(page: page).order("created_at DESC"),
+		# 	page: page,
+		# 	pages: User.pages
+		# 	}
 		respond_with User.all.order("created_at DESC")
 	end
 
@@ -21,5 +27,9 @@ class Api::V1::UsersController < Api::V1::BaseController
 
 	def user_params
 		params.require(:user).permit(:id, :first_name, :last_name, :mobile_number, :phone_number)
+	end
+
+	def page
+		params[:page] || 1
 	end
 end
